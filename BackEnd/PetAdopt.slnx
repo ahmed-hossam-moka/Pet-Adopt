@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="PetAdopt.API/PetAdopt.API.csproj" />
+  <Project Path="PetAdopt.BLL/PetAdopt.BLL.csproj" />
+  <Project Path="PetAdopt.DAL/PetAdopt.DAL.csproj" />
+</Solution>
