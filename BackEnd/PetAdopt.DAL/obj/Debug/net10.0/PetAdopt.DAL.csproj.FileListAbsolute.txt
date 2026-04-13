@@ -1,0 +1,14 @@
+E:\Projects\.NET-Projects\PetAdopt\PetAdopt\PetAdopt\PetAdopt.DAL\bin\Debug\net10.0\PetAdopt.DAL.deps.json
+E:\Projects\.NET-Projects\PetAdopt\PetAdopt\PetAdopt\PetAdopt.DAL\bin\Debug\net10.0\PetAdopt.DAL.runtimeconfig.json
+E:\Projects\.NET-Projects\PetAdopt\PetAdopt\PetAdopt\PetAdopt.DAL\bin\Debug\net10.0\PetAdopt.DAL.dll
+E:\Projects\.NET-Projects\PetAdopt\PetAdopt\PetAdopt\PetAdopt.DAL\bin\Debug\net10.0\PetAdopt.DAL.pdb
+E:\Projects\.NET-Projects\PetAdopt\PetAdopt\PetAdopt\PetAdopt.DAL\obj\Debug\net10.0\PetAdopt.DAL.csproj.AssemblyReference.cache
+E:\Projects\.NET-Projects\PetAdopt\PetAdopt\PetAdopt\PetAdopt.DAL\obj\Debug\net10.0\PetAdopt.DAL.GeneratedMSBuildEditorConfig.editorconfig
+E:\Projects\.NET-Projects\PetAdopt\PetAdopt\PetAdopt\PetAdopt.DAL\obj\Debug\net10.0\PetAdopt.DAL.AssemblyInfoInputs.cache
+E:\Projects\.NET-Projects\PetAdopt\PetAdopt\PetAdopt\PetAdopt.DAL\obj\Debug\net10.0\PetAdopt.DAL.AssemblyInfo.cs
+E:\Projects\.NET-Projects\PetAdopt\PetAdopt\PetAdopt\PetAdopt.DAL\obj\Debug\net10.0\PetAdopt.DAL.csproj.CoreCompileInputs.cache
+E:\Projects\.NET-Projects\PetAdopt\PetAdopt\PetAdopt\PetAdopt.DAL\obj\Debug\net10.0\PetAdopt.DAL.dll
+E:\Projects\.NET-Projects\PetAdopt\PetAdopt\PetAdopt\PetAdopt.DAL\obj\Debug\net10.0\refint\PetAdopt.DAL.dll
+E:\Projects\.NET-Projects\PetAdopt\PetAdopt\PetAdopt\PetAdopt.DAL\obj\Debug\net10.0\PetAdopt.DAL.pdb
+E:\Projects\.NET-Projects\PetAdopt\PetAdopt\PetAdopt\PetAdopt.DAL\obj\Debug\net10.0\PetAdopt.DAL.genruntimeconfig.cache
+E:\Projects\.NET-Projects\PetAdopt\PetAdopt\PetAdopt\PetAdopt.DAL\obj\Debug\net10.0\ref\PetAdopt.DAL.dll

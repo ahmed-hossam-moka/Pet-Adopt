@@ -1,0 +1,320 @@
+###
+@baseUrl = http://localhost:5052/api
+@token_admin = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjliZWY5MzgzLTk3ZTMtNGZlOS1hY2FlLThjZWIyOGU3MGI0YiIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL2VtYWlsYWRkcmVzcyI6ImFobWVkQGFkbWluLmNvbSIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL25hbWUiOiJBaG1lZCBIb3NzYW0iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBZG1pbiIsImV4cCI6MTc3NjE2OTk1OCwiaXNzIjoiUGV0QWRvcHRBUEkiLCJhdWQiOiJQZXRBZG9wdENsaWVudCJ9.YvUd3UaYY99OmKWDS2bEKn1wfBbKctiC0MHfWMj00rQ
+@token_shelter = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6ImJjNGJiZGI4LTBlMDItNDhjNC1iMDViLTQxYmMzMjI1ZWJiZCIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL2VtYWlsYWRkcmVzcyI6IlBldE93bmVycnJAdGVzdC5jb20iLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiSGFwcHkgUGF3cyBTaGVsdGVyIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiUGV0T3duZXIiLCJleHAiOjE3NzYxNzAxNDEsImlzcyI6IlBldEFkb3B0QVBJIiwiYXVkIjoiUGV0QWRvcHRDbGllbnQifQ.RVdLPJFFWz0zrcuYdZydZ_2sZFfp9oVP3YwMDJQFWIM
+@token_adopter = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjA4ZDcxYjQ0LTEyN2QtNGYyOS1iZWMwLWQ3ZjY1MDcwZjZhYiIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL2VtYWlsYWRkcmVzcyI6Ik1va2FAdGVzdC5jb20iLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiQkxBQkxBIEFkb3B0ZXIiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBZG9wdGVyIiwiZXhwIjoxNzc1ODg2MDkyLCJpc3MiOiJQZXRBZG9wdEFQSSIsImF1ZCI6IlBldEFkb3B0Q2xpZW50In0.vlWrXKyhnJNIRpxFWKOq30nIBfafO4M82QYfXtVCYyc
+
+###############################################
+# 1. AUTH
+###############################################
+### Register Shelter
+# @name registerShelter
+POST {{baseUrl}}/auth/register
+Content-Type: application/json
+
+{
+  "name": "Happy Paws Shelter",
+  "email": "PetOwnerrr@test.com",
+  "password": "Test@1234",
+  "role": "PetOwner"
+}
+
+###
+
+### Register PetOwner
+POST {{baseUrl}}/auth/register
+Content-Type: application/json
+
+{
+  "name": "John Owner",
+  "email": "ownereesa2@test.com",
+  "password": "Test@1234",
+  "role": "PetOwner"
+}
+
+###
+
+### Register Adopter
+# @name registerAdopter
+POST {{baseUrl}}/auth/register
+Content-Type: application/json
+
+{
+  "name": "BLABLA Adopter",
+  "email": "Moka@test.com",
+  "password": "Test@1234",
+  "role": "Adopter"
+}
+
+###
+
+### Login as Admin
+# @name loginAdmin
+POST {{baseUrl}}/auth/login
+Content-Type: application/json
+
+{
+  "email": "ahmed@admin.com",
+  "password": "Admin@1234"
+}
+
+###
+
+### Login as Shelter
+# @name loginShelter
+POST {{baseUrl}}/auth/login
+Content-Type: application/json
+
+{
+  "email": "PetOwnerrr@test.com",
+  "password": "Test@1234"
+}
+
+###
+
+### Login as Adopter
+# @name loginAdopter
+POST {{baseUrl}}/auth/login
+Content-Type: application/json
+
+{
+  "email": "adopter@test.com",
+  "password": "Test@1234"
+}
+
+
+###############################################
+# 2. ADMIN — Users Management
+###############################################
+
+### Get All Pending Users
+GET {{baseUrl}}/admin/pending-users
+Authorization: Bearer {{token_admin}}
+
+###
+
+### Approve Shelter Account
+PUT {{baseUrl}}/admin/approve-user/95fa1b92-c47c-4c94-93e7-3d4c0cf9963e
+Authorization: Bearer {{token_admin}}
+
+###
+
+### Reject User Account
+PUT {{baseUrl}}/admin/reject-user/f5c205cd-0d39-4584-80e0-d7f4b9f4e65a
+Authorization: Bearer {{token_admin}}
+
+
+###############################################
+# 3. PETS — Public (No Login)
+###############################################
+
+### Get All Approved Pets
+GET {{baseUrl}}/pets
+
+###
+
+### Get Pet By Id
+GET {{baseUrl}}/pets/24
+
+
+###
+
+### Search Pets — All Filters
+GET {{baseUrl}}/pets/search?animalType=Dog&breed=Husky&maxAge=24&location=Cairo
+
+###
+
+### Search Pets — Only Animal Type
+GET {{baseUrl}}/pets/search?animalType=cat
+
+###
+
+### Search Pets — Only Location
+GET {{baseUrl}}/pets/search?location=Alex&breed=Husky
+
+
+### Search Pets — Only Age
+GET {{baseUrl}}/pets/search?maxAge=5&location=Cairo
+
+
+###############################################
+# 4. PETS — Owner (Shelter/PetOwner)
+###############################################
+
+### Get My Pets
+GET {{baseUrl}}/pets/my-pets
+Authorization: Bearer {{token_shelter}}
+
+###
+
+### Create New Pet
+# @name createPet
+POST {{baseUrl}}/pets
+Authorization: Bearer {{token_shelter}}
+Content-Type: application/json
+
+{
+  "name": "Bla 7",
+  "animalType": "Cat",
+  "breed": "Husky",
+  "age": 10,
+  "gender": "Male",
+  "healthStatus": "Vaccinated and healthy",
+  "description": "Very friendly and playful cat",
+  "location": "Alex",
+  "ImageUrls": ["https://example.com/cat1.jpg", "https://example.com/cat2.jpg"  ]
+}
+
+###
+
+### Update Pet
+PUT {{baseUrl}}/pets/1
+Authorization: Bearer {{token_shelter}}
+Content-Type: application/json
+
+{
+  "name": "Buddy Updated",
+  "location": "Giza"
+}
+
+###
+
+### Delete Pet (Soft Delete)
+DELETE {{baseUrl}}/pets/8
+Authorization: Bearer {{token_shelter}}
+
+
+###############################################
+# 5. ADMIN — Pets Management
+###############################################
+
+### Get All Pending Approval Pets
+GET {{baseUrl}}/admin/pending-pets
+Authorization: Bearer {{token_admin}}
+
+###
+
+### Approve Pet
+PUT {{baseUrl}}/admin/approve-pet/24
+Authorization: Bearer {{token_admin}}
+
+###
+
+### Reject Pet
+PUT {{baseUrl}}/admin/reject-pet/9
+Authorization: Bearer {{token_admin}}
+
+
+###############################################
+# 6. ADOPTER HISTORY
+###############################################
+
+### Add History
+POST {{baseUrl}}/adopterhistory
+Authorization: Bearer {{token_adopter}}
+Content-Type: application/json
+
+{
+  "previousPetName": "nono",
+  "previousPetType": "cat",
+  "veterinaryReference": "Dr. Ahmed - 01012345678",
+  "experience": "I had a dog for 3 years and took great care of him",
+  "yearOfAdoption": 2022
+}
+
+###
+
+### Get My Histories
+GET {{baseUrl}}/adopterhistory
+Authorization: Bearer {{token_adopter}}
+
+###
+
+### Delete History
+DELETE {{baseUrl}}/adopterhistory/1
+Authorization: Bearer {{token_adopter}}
+
+
+###############################################
+# 7. ADOPTION REQUESTS
+###############################################
+
+### Submit Adoption Request
+POST {{baseUrl}}/adoption/request
+Authorization: Bearer {{token_adopter}}
+Content-Type: application/json
+
+{
+  "petId": 24,
+  "message": "I love this pet and I have experience with dogs"
+}
+
+###
+
+### Get My Requests (Adopter)
+GET {{baseUrl}}/adoption/my-requests
+Authorization: Bearer {{token_adopter}}
+
+###
+
+### Get Requests By Pet (Owner)
+GET {{baseUrl}}/adoption/pet/24/requests
+Authorization: Bearer {{token_shelter}}
+
+###
+
+### Accept Request (Owner)
+PUT {{baseUrl}}/adoption/request/12/accept
+Authorization: Bearer {{token_shelter}}
+
+###
+
+### Reject Request (Owner)
+PUT {{baseUrl}}/adoption/request/2/reject
+Authorization: Bearer {{token_shelter}}
+
+
+###############################################
+# 8. FAVORITES
+###############################################
+
+### Add Pet to Favorites by Pet Id
+POST {{baseUrl}}/favorites/24
+Authorization: Bearer {{token_adopter}}
+
+###
+
+### Get My Favorites 
+GET {{baseUrl}}/favorites
+Authorization: Bearer {{token_adopter}}
+
+###
+
+### Remove from Favorites by Pet Id
+DELETE {{baseUrl}}/favorites/23
+Authorization: Bearer {{token_adopter}}
+
+
+###############################################
+# 9. REVIEWS
+###############################################
+
+### Create Review
+POST {{baseUrl}}/reviews
+Authorization: Bearer {{token_adopter}}
+Content-Type: application/json
+
+{
+  "petId": 24,
+  "rating": 5,
+  "comment": "Amazing experience! The shelter was very helpful"
+}
+
+###
+
+### Get Owner Reviews (Public)
+GET {{baseUrl}}/reviews/owner/bc4bbdb8-0e02-48c4-b05b-41bc3225ebbd?page=2&pageSize=2
+
+
+###
+GET {{baseUrl}}/pets?page=2&pageSize=10
