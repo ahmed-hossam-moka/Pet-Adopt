@@ -8,7 +8,6 @@ namespace PetAdopt.DAL.Models
         public bool IsPrimary { get; set; }
         public DateTime UploadedAt { get; set; }
 
-        // Navigation Property
         public Pet Pet { get; set; }
     }
 }

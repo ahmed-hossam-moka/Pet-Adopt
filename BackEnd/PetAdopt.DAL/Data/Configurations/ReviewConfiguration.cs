@@ -19,23 +19,19 @@ namespace PetAdopt.DAL.Data.Configurations
             builder.Property(r => r.CreatedAt)
                 .HasDefaultValueSql("GETUTCDATE()");
 
-            // Unique: review واحدة بس لكل adoption
             builder.HasIndex(r => new { r.ReviewerId, r.PetId })
                 .IsUnique();
 
-            // Relationship → Pet
             builder.HasOne(r => r.Pet)
                 .WithMany(p => p.Reviews)
                 .HasForeignKey(r => r.PetId)
                 .OnDelete(DeleteBehavior.Restrict);
 
-            // Relationship → Reviewer (Adopter)
             builder.HasOne(r => r.Reviewer)
                 .WithMany(u => u.ReviewsGiven)
                 .HasForeignKey(r => r.ReviewerId)
                 .OnDelete(DeleteBehavior.Restrict);
 
-            // Relationship → Owner
             builder.HasOne(r => r.Owner)
                 .WithMany(u => u.ReviewsReceived)
                 .HasForeignKey(r => r.OwnerId)

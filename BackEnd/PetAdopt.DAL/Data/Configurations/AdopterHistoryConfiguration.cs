@@ -22,7 +22,6 @@ namespace PetAdopt.DAL.Data.Configurations
             builder.Property(h => h.Experience)
                 .HasColumnType("nvarchar(max)");
 
-            // Relationship → Adopter
             builder.HasOne(h => h.Adopter)
                 .WithMany(u => u.AdopterHistories)
                 .HasForeignKey(h => h.AdopterId)

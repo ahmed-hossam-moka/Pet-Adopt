@@ -10,7 +10,6 @@ namespace PetAdopt.DAL.Models
         public string Experience { get; set; }
         public int? YearOfAdoption { get; set; }
 
-        // Navigation Property
         public ApplicationUser Adopter { get; set; }
     }
 }

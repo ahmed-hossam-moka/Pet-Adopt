@@ -9,7 +9,6 @@ namespace PetAdopt.DAL.Models
         public bool IsActive { get; set; }
         public DateTime CreatedAt { get; set; }
 
-        // Navigation Properties
         public ICollection<Pet> Pets { get; set; }
         public ICollection<AdoptionRequest> AdoptionRequests { get; set; }
         public ICollection<AdopterHistory> AdopterHistories { get; set; }

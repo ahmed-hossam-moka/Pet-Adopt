@@ -7,7 +7,6 @@ namespace PetAdopt.DAL.Models
         public int PetId { get; set; }
         public DateTime SavedAt { get; set; }
 
-        // Navigation Properties
         public ApplicationUser Adopter { get; set; }
         public Pet Pet { get; set; }
     }

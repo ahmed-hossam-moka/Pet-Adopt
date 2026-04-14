@@ -16,13 +16,11 @@ namespace PetAdopt.DAL.Data.Configurations
             builder.HasIndex(f => new { f.AdopterId, f.PetId })
                 .IsUnique();
 
-            // Relationship → Adopter
             builder.HasOne(f => f.Adopter)
                 .WithMany(u => u.Favorites)
                 .HasForeignKey(f => f.AdopterId)
                 .OnDelete(DeleteBehavior.Restrict);
 
-            // Relationship → Pet
             builder.HasOne(f => f.Pet)
                 .WithMany(p => p.Favorites)
                 .HasForeignKey(f => f.PetId)

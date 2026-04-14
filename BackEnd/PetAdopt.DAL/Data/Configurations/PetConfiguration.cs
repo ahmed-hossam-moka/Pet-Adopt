@@ -31,10 +31,9 @@ namespace PetAdopt.DAL.Data.Configurations
                 .HasColumnType("nvarchar(max)");
 
             builder.Property(p => p.Gender)
-                .HasConversion<string>();   // يخزن "Male"/"Female" في الـ DB
-
+                .HasConversion<string>();  
             builder.Property(p => p.Status)
-                .HasConversion<string>()    // يخزن "Available"/"Pending"/"Adopted"
+                .HasConversion<string>()    
                 .HasDefaultValue(PetStatus.Available);
 
             builder.Property(p => p.IsApproved)

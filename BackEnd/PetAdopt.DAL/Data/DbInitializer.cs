@@ -12,7 +12,6 @@ public static class DbInitializer
     var roleManager = services.GetRequiredService<RoleManager<IdentityRole>>();
     var userManager = services.GetRequiredService<UserManager<ApplicationUser>>();
 
-        // ───── Roles ─────
         string[] roles = { "Admin", "Shelter", "PetOwner", "Adopter" };
 
         foreach (var role in roles)
@@ -21,7 +20,6 @@ public static class DbInitializer
                 await roleManager.CreateAsync(new IdentityRole(role));
         }
 
-        // ───── Admin ─────
         var adminEmail = config["AdminSettings:Email"];
         var adminPassword = config["AdminSettings:Password"];
         var adminUser = await userManager.FindByEmailAsync(adminEmail!);

@@ -20,7 +20,6 @@ namespace PetAdopt.DAL.Data.Configurations
             builder.Property(i => i.UploadedAt)
                 .HasDefaultValueSql("GETUTCDATE()");
 
-            // Relationship → Pet
             builder.HasOne(i => i.Pet)
                 .WithMany(p => p.Images)
                 .HasForeignKey(i => i.PetId)

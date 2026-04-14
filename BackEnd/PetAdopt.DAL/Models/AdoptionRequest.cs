@@ -12,7 +12,6 @@ namespace PetAdopt.DAL.Models
         public DateTime CreatedAt { get; set; }
         public DateTime? UpdatedAt { get; set; }
 
-        // Navigation Properties
         public Pet Pet { get; set; }
         public ApplicationUser Adopter { get; set; }
     }

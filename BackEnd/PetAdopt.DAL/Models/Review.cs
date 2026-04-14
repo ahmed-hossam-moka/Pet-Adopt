@@ -10,7 +10,6 @@ namespace PetAdopt.DAL.Models
         public string Comment { get; set; }
         public DateTime CreatedAt { get; set; }
 
-        // Navigation Properties
         public Pet Pet { get; set; }
         public ApplicationUser Reviewer { get; set; }
         public ApplicationUser Owner { get; set; }
