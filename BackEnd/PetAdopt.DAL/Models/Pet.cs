@@ -1,8 +1,6 @@
 namespace PetAdopt.DAL.Models
 {
-    public enum PetStatus  { Available
-    // , Pending
-    , Adopted }
+    public enum PetStatus  { Available, Adopted }
     public enum PetGender  { Male, Female }
 
     public class Pet

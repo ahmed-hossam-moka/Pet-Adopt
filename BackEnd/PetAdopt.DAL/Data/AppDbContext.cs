@@ -14,6 +14,7 @@ namespace PetAdopt.DAL.Data
         public DbSet<AdopterHistory> AdopterHistories { get; set; }
         public DbSet<Favorite> Favorites { get; set; }
         public DbSet<Review> Reviews { get; set; }
+        public DbSet<Notification> Notifications { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

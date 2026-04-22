@@ -44,7 +44,7 @@ namespace PetAdopt.BLL.Services.Implementations
                 PetId = dto.PetId,
                 AdopterId = adopterId,
                 Status = RequestStatus.Pending,
-                Message = dto.Message,
+                Message = dto.Message!,
                 CreatedAt = DateTime.UtcNow
             };
 
@@ -58,7 +58,6 @@ namespace PetAdopt.BLL.Services.Implementations
             ownerId:     pet.OwnerId,
             adopterName: adopter.Adopter.Name,
             petName:     pet.Name);
-
 
             return true;
         }
@@ -111,20 +110,17 @@ namespace PetAdopt.BLL.Services.Implementations
                     other.UpdatedAt = DateTime.UtcNow;
                     _requestRepository.Update(other);
 
-                // 🔔 Notify Other Adopters (Rejected)
                 await _notificationService.NotifyRequestRejectedAsync(
                     adopterId: other.AdopterId,
-                    petName:   request.Pet.Name,
-                    ownerName: request.Pet.Owner.Name);
+                    petName:   request.Pet.Name);
                 }
             }
 
             await _requestRepository.SaveAsync();
 
             await _notificationService.NotifyRequestAcceptedAsync(
-            adopterId: request.AdopterId,
-            petName:   request.Pet.Name,
-            ownerName: "");
+                    adopterId: request.AdopterId,
+                    petName:   request.Pet.Name);
             return true;
         }
         public async Task<bool> RejectRequestAsync(int requestId, string ownerId)
@@ -152,10 +148,10 @@ namespace PetAdopt.BLL.Services.Implementations
 
             await _requestRepository.SaveAsync();
 
+            // 🔔 Notify Rejected Adopter
             await _notificationService.NotifyRequestRejectedAsync(
             adopterId: request.AdopterId,
-            petName:   request.Pet.Name,
-            ownerName: request.Pet.Owner.Name);
+            petName:   request.Pet.Name);
 
             
             return true;

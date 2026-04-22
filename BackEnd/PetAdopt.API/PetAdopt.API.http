@@ -1,8 +1,8 @@
 ###
 @baseUrl = http://localhost:5052/api
-@token_admin = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjliZWY5MzgzLTk3ZTMtNGZlOS1hY2FlLThjZWIyOGU3MGI0YiIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL2VtYWlsYWRkcmVzcyI6ImFobWVkQGFkbWluLmNvbSIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL25hbWUiOiJBaG1lZCBIb3NzYW0iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBZG1pbiIsImV4cCI6MTc3NjE2OTk1OCwiaXNzIjoiUGV0QWRvcHRBUEkiLCJhdWQiOiJQZXRBZG9wdENsaWVudCJ9.YvUd3UaYY99OmKWDS2bEKn1wfBbKctiC0MHfWMj00rQ
-@token_shelter = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6ImJjNGJiZGI4LTBlMDItNDhjNC1iMDViLTQxYmMzMjI1ZWJiZCIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL2VtYWlsYWRkcmVzcyI6IlBldE93bmVycnJAdGVzdC5jb20iLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiSGFwcHkgUGF3cyBTaGVsdGVyIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiUGV0T3duZXIiLCJleHAiOjE3NzYxNzAxNDEsImlzcyI6IlBldEFkb3B0QVBJIiwiYXVkIjoiUGV0QWRvcHRDbGllbnQifQ.RVdLPJFFWz0zrcuYdZydZ_2sZFfp9oVP3YwMDJQFWIM
-@token_adopter = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjA4ZDcxYjQ0LTEyN2QtNGYyOS1iZWMwLWQ3ZjY1MDcwZjZhYiIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL2VtYWlsYWRkcmVzcyI6Ik1va2FAdGVzdC5jb20iLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiQkxBQkxBIEFkb3B0ZXIiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBZG9wdGVyIiwiZXhwIjoxNzc1ODg2MDkyLCJpc3MiOiJQZXRBZG9wdEFQSSIsImF1ZCI6IlBldEFkb3B0Q2xpZW50In0.vlWrXKyhnJNIRpxFWKOq30nIBfafO4M82QYfXtVCYyc
+@token_admin = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6Ijc0ZTM0YjA4LWU0NDMtNGY1ZC1iN2EwLTMzODQwN2EzYzhkMSIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL2VtYWlsYWRkcmVzcyI6ImFkbWluQHRlc3QuY29tIiwiaHR0cDovL3NjaGVtYXMueG1sc29hcC5vcmcvd3MvMjAwNS8wNS9pZGVudGl0eS9jbGFpbXMvbmFtZSI6IkFkbWluIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiQWRtaW4iLCJleHAiOjE3NzY2MDA4MzUsImlzcyI6IlBldEFkb3B0QVBJIiwiYXVkIjoiUGV0QWRvcHRDbGllbnQifQ.cMEthcytgaqHeZ2fP1f63f7x9FhORD2TTGWUWPL-F3c
+@token_shelter = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjcyMzU2NDlkLWFlOTQtNDZkMC05NzUxLThiZWNiNjc3OGJjZiIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL2VtYWlsYWRkcmVzcyI6Im93bmVyZWVzYTlAdGVzdC5jb20iLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiYWhtZWQgb21lciIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IlBldE93bmVyIiwiZXhwIjoxNzc2NjAwOTM5LCJpc3MiOiJQZXRBZG9wdEFQSSIsImF1ZCI6IlBldEFkb3B0Q2xpZW50In0.vZPNna8i_BvlP-CyiIcIGgx80q12NsCbrE4umIyU3_s
+@token_adopter = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjExYWMzOGM1LWNlOTQtNDk2MC04YWY1LTUwMWZlMDE1MWZkMSIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL2VtYWlsYWRkcmVzcyI6Ik1va2FAdGVzdC5jb20iLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiQkxBQkxBIEFkb3B0ZXIiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBZG9wdGVyIiwiZXhwIjoxNzc2NjAyNTU0LCJpc3MiOiJQZXRBZG9wdEFQSSIsImF1ZCI6IlBldEFkb3B0Q2xpZW50In0.UWkOLmUo_P70uBl8azqokka60-rlDTkrZRON8IZ2h0s
 
 ###############################################
 # 1. AUTH
@@ -26,8 +26,8 @@ POST {{baseUrl}}/auth/register
 Content-Type: application/json
 
 {
-  "name": "John Owner",
-  "email": "ownereesa2@test.com",
+  "name": "ahmed omer",
+  "email": "ownereesa9@test.com",
   "password": "Test@1234",
   "role": "PetOwner"
 }
@@ -54,7 +54,7 @@ POST {{baseUrl}}/auth/login
 Content-Type: application/json
 
 {
-  "email": "ahmed@admin.com",
+  "email": "admin@test.com",
   "password": "Admin@1234"
 }
 
@@ -66,7 +66,7 @@ POST {{baseUrl}}/auth/login
 Content-Type: application/json
 
 {
-  "email": "PetOwnerrr@test.com",
+  "email": "ownereesa9@test.com",
   "password": "Test@1234"
 }
 
@@ -94,7 +94,7 @@ Authorization: Bearer {{token_admin}}
 ###
 
 ### Approve Shelter Account
-PUT {{baseUrl}}/admin/approve-user/95fa1b92-c47c-4c94-93e7-3d4c0cf9963e
+PUT {{baseUrl}}/admin/approve-user/7235649d-ae94-46d0-9751-8becb6778bcf
 Authorization: Bearer {{token_admin}}
 
 ###
@@ -154,15 +154,15 @@ Authorization: Bearer {{token_shelter}}
 Content-Type: application/json
 
 {
-  "name": "Bla 7",
-  "animalType": "Cat",
-  "breed": "Husky",
+  "name": "Hamada",
+  "animalType": "Dog",
+  "breed": "Bla Husky",
   "age": 10,
-  "gender": "Male",
+  "gender": "Female",
   "healthStatus": "Vaccinated and healthy",
-  "description": "Very friendly and playful cat",
-  "location": "Alex",
-  "ImageUrls": ["https://example.com/cat1.jpg", "https://example.com/cat2.jpg"  ]
+  "description": "Very friendly and playful dog, looking for a loving home",
+  "location": "cairo",
+  "ImageUrls": ["https://example.com/dog1.jpg", "https://example.com/dog2.jpg"  ]
 }
 
 ###
@@ -195,13 +195,13 @@ Authorization: Bearer {{token_admin}}
 ###
 
 ### Approve Pet
-PUT {{baseUrl}}/admin/approve-pet/24
+PUT {{baseUrl}}/admin/approve-pet/4
 Authorization: Bearer {{token_admin}}
 
 ###
 
 ### Reject Pet
-PUT {{baseUrl}}/admin/reject-pet/9
+PUT {{baseUrl}}/admin/reject-pet/26
 Authorization: Bearer {{token_admin}}
 
 
@@ -215,8 +215,8 @@ Authorization: Bearer {{token_adopter}}
 Content-Type: application/json
 
 {
-  "previousPetName": "nono",
-  "previousPetType": "cat",
+  "previousPetName": "Max",
+  "previousPetType": "dog",
   "veterinaryReference": "Dr. Ahmed - 01012345678",
   "experience": "I had a dog for 3 years and took great care of him",
   "yearOfAdoption": 2022
@@ -245,7 +245,7 @@ Authorization: Bearer {{token_adopter}}
 Content-Type: application/json
 
 {
-  "petId": 24,
+  "petId": 1,
   "message": "I love this pet and I have experience with dogs"
 }
 
@@ -258,19 +258,19 @@ Authorization: Bearer {{token_adopter}}
 ###
 
 ### Get Requests By Pet (Owner)
-GET {{baseUrl}}/adoption/pet/24/requests
+GET {{baseUrl}}/adoption/pet/1/requests
 Authorization: Bearer {{token_shelter}}
 
 ###
 
 ### Accept Request (Owner)
-PUT {{baseUrl}}/adoption/request/12/accept
+PUT {{baseUrl}}/adoption/request/13/accept
 Authorization: Bearer {{token_shelter}}
 
 ###
 
 ### Reject Request (Owner)
-PUT {{baseUrl}}/adoption/request/2/reject
+PUT {{baseUrl}}/adoption/request/13/reject
 Authorization: Bearer {{token_shelter}}
 
 
@@ -305,7 +305,7 @@ Authorization: Bearer {{token_adopter}}
 Content-Type: application/json
 
 {
-  "petId": 24,
+  "petId": 1,
   "rating": 5,
   "comment": "Amazing experience! The shelter was very helpful"
 }
@@ -318,3 +318,13 @@ GET {{baseUrl}}/reviews/owner/bc4bbdb8-0e02-48c4-b05b-41bc3225ebbd?page=2&pageSi
 
 ###
 GET {{baseUrl}}/pets?page=2&pageSize=10
+###
+### Get My notifications 
+GET {{baseUrl}}/notifications
+Authorization: Bearer {{token_adopter}}
+### Get My notifications 
+GET {{baseUrl}}/notifications
+Authorization: Bearer {{token_shelter}}
+### Get My notifications
+GET {{baseUrl}}/notifications
+Authorization: Bearer {{token_admin}}

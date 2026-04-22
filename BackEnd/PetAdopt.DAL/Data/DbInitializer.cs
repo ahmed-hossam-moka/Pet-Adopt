@@ -7,7 +7,7 @@ namespace PetAdopt.DAL.Data;
 
 public static class DbInitializer
 {
-    public static async Task SeedAsync(IServiceProvider services, IConfiguration config)
+    public static async Task SeedAsync(IServiceProvider services, IConfiguration Configuration)
     {
     var roleManager = services.GetRequiredService<RoleManager<IdentityRole>>();
     var userManager = services.GetRequiredService<UserManager<ApplicationUser>>();
@@ -20,8 +20,8 @@ public static class DbInitializer
                 await roleManager.CreateAsync(new IdentityRole(role));
         }
 
-        var adminEmail = config["AdminSettings:Email"];
-        var adminPassword = config["AdminSettings:Password"];
+        var adminEmail = Configuration["AdminSettings:Email"];
+        var adminPassword = Configuration["AdminSettings:Password"];
         var adminUser = await userManager.FindByEmailAsync(adminEmail!);
 
         if (adminUser == null)

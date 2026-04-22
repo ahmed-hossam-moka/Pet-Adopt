@@ -15,5 +15,7 @@ namespace PetAdopt.DAL.Models
         public ICollection<Favorite> Favorites { get; set; }
         public ICollection<Review> ReviewsGiven { get; set; }
         public ICollection<Review> ReviewsReceived { get; set; }
+        public ICollection<Notification> Notifications { get; set; }
+
     }
 }
