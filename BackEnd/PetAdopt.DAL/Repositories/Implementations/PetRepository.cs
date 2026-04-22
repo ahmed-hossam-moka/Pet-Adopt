@@ -10,7 +10,7 @@ namespace PetAdopt.DAL.Repositories.Implementations
     {
         public PetRepository(AppDbContext context) : base(context) { }
 
-
+        
         public async Task<PagedResult<PetHomeResponseDto>> GetApprovedPetsAsync(PaginationParams param)
         {
             var query = _context.Pets
@@ -20,15 +20,15 @@ namespace PetAdopt.DAL.Repositories.Implementations
             var totalCount = await query.CountAsync();
 
             var items = await query
-                .OrderBy(p => p.PetId) // مهم
+                .OrderBy(p => p.PetId) 
                 .Skip((param.Page - 1) * param.PageSize)
                 .Take(param.PageSize)
                 .Select(p => new PetHomeResponseDto
                 {
-                    PetId = p.PetId,
+                    PetId=p.PetId,
                     Name = p.Name,
                     AnimalType = p.AnimalType,
-                    Breed = p.Breed,
+                    Breed= p.Breed,
                     Age = p.Age,
                     Location = p.Location,
                     PrimaryImageUrl = p.PrimaryImageUrl
@@ -44,6 +44,7 @@ namespace PetAdopt.DAL.Repositories.Implementations
                 .Where(p => p.PetId == petId && !p.IsDeleted)
                 .Include(p => p.Images)
                 .Include(p => p.Owner)
+
                 .FirstOrDefaultAsync();
         }
 
@@ -64,17 +65,17 @@ namespace PetAdopt.DAL.Repositories.Implementations
 
             var query = _context.Pets
                         .AsQueryable()
-                        .Where(p => p.IsApproved && !p.IsDeleted)
+                        .Where(p => p.IsApproved && !p.IsDeleted)               
                         .Select(p => new PetHomeResponseDto
-                        {
-                            PetId = p.PetId,
-                            Name = p.Name,
-                            AnimalType = p.AnimalType,
-                            Breed = p.Breed,
-                            Age = p.Age,
-                            Location = p.Location,
-                            PrimaryImageUrl = p.PrimaryImageUrl
-                        });
+                            {
+                                PetId=p.PetId,
+                                Name = p.Name,
+                                AnimalType = p.AnimalType,
+                                Breed= p.Breed,
+                                Age = p.Age,
+                                Location = p.Location,
+                                PrimaryImageUrl = p.PrimaryImageUrl
+                            });
 
             if (!string.IsNullOrEmpty(animalType))
                 query = query.Where(p => p.AnimalType.ToLower() == animalType.ToLower());
@@ -100,6 +101,6 @@ namespace PetAdopt.DAL.Repositories.Implementations
                 .ToListAsync();
         }
 
-    }
+    }   
 
 }

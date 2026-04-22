@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project>
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAArPP2UfLYIEeocI0nPs1YXQAAAAACAAAAAAAQZgAAAAEAACAAAABk/oVblnM3kVgh52Wa40Kh3ez8gm15NbW2SV+21Mj8ywAAAAAOgAAAAAIAACAAAAC2daEW/ufT8QAyrAJX+9rSiykuaUuS7jsIEqkaKhCOSyAAAAChsqVsNcT+N09DZgLifcIAmVn/K3jYNndtnt9rd9t5xUAAAABjTmgGOhJEE58KWePM4T4+lSv7l7VInUhir/KtxauywpsHPJzuKw4ENSK10yXSlHdP4YpyhjLuoQs0lPKBUHAy</EncryptedPassword>
+    <History>True|2026-04-16T17:38:22.1578005Z||;True|2026-04-16T17:57:31.9787619+02:00||;True|2026-04-16T17:35:36.8246036+02:00||;</History>
+    <LastFailureDetails />
+  </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="DefaultConnection">
+      <Value>Server=db48185.public.databaseasp.net%3b Database=db48185%3b User Id=db48185%3b Password=Fo5!3+cCR8%3fa%3b Encrypt=True%3b TrustServerCertificate=True%3b MultipleActiveResultSets=True%3b</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
+</Project>

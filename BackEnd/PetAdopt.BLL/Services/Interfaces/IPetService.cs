@@ -26,6 +26,7 @@ namespace PetAdopt.BLL.Services.Interfaces
         Task<bool> ApprovePetAsync(int petId);
         Task<bool> RejectPetAsync(int petId);
 
+
     }
     
 }

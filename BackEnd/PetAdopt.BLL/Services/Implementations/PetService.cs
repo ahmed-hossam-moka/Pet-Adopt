@@ -43,6 +43,7 @@ namespace PetAdopt.BLL.Services.Implementations
 
         public async Task<PetResponseDto> CreatePetAsync(CreatePetDto dto, string ownerId)
         {
+
             var pet = new Pet
             {
                 OwnerId = ownerId,
@@ -63,6 +64,10 @@ namespace PetAdopt.BLL.Services.Implementations
 
             await _petRepository.AddAsync(pet);
             await _petRepository.SaveAsync();
+
+
+            await _notificationService.NotifyNewPetRequestAsync(
+            petName: pet.Name);
 
             return MapToResponseDto(pet);
         }
@@ -157,7 +162,6 @@ namespace PetAdopt.BLL.Services.Implementations
 
             return true;
         }
-
 
         
         private PetResponseDto MapToResponseDto(Pet pet)
