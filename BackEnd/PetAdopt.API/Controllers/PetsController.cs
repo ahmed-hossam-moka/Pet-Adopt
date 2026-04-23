@@ -42,13 +42,14 @@ public class PetsController : BaseController
     [HttpGet("search")]
     [AllowAnonymous]
     public async Task<IActionResult> SearchPets(
+        [FromQuery] PaginationParams paginationParams,
         [FromQuery] string? animalType,
         [FromQuery] string? breed,
         [FromQuery] int? maxAge,
         [FromQuery] string? location)
     {
 
-        var pets = await _petService.SearchPetsAsync(
+        var pets = await _petService.SearchPetsAsync(paginationParams,
             animalType, breed, maxAge, location);
         return Success(pets);
 
