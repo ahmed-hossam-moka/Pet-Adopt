@@ -12,7 +12,7 @@ namespace PetAdopt.DAL.Repositories.Interfaces
 
         Task<IEnumerable<Pet>> GetPetsByOwnerAsync(string ownerId);
 
-        Task<IEnumerable<PetHomeResponseDto>> SearchPetsAsync(
+        Task<PagedResult<PetHomeResponseDto>> SearchPetsAsync(PaginationParams paginationParams,
             string? animalType,
             string? breed,
             int? maxAge,

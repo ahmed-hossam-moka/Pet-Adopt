@@ -1,3 +1,4 @@
+using Azure;
 using PetAdopt.BLL.DTOs.Pet;
 using PetAdopt.DAL.Models;
 using PetAdopt.DAL.Pagination;
@@ -11,7 +12,7 @@ namespace PetAdopt.BLL.Services.Interfaces
 
 
         Task<PetResponseDto?> GetPetByIdAsync(int petId);
-        Task<IEnumerable<PetHomeResponseDto>> SearchPetsAsync(
+        Task<PagedResult<PetHomeResponseDto>> SearchPetsAsync( PaginationParams paginationParams,
             string? animalType,
             string? breed,
             int? maxAge,

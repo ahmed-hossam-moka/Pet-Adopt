@@ -31,13 +31,13 @@ namespace PetAdopt.BLL.Services.Implementations
             return MapToResponseDto(pet);
         }
 
-        public async Task<IEnumerable<PetHomeResponseDto>> SearchPetsAsync(
+        public async Task<PagedResult<PetHomeResponseDto>> SearchPetsAsync(PaginationParams paginationParams,
             string? animalType,
             string? breed,
             int? maxAge,
             string? location)
         {
-            return await _petRepository.SearchPetsAsync(
+            return await _petRepository.SearchPetsAsync(paginationParams,
                 animalType, breed, maxAge, location);
         }
 
