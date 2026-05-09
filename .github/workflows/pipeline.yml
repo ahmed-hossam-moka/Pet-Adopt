@@ -19,7 +19,7 @@ jobs:
           dotnet-version: '10.0.x'
 
       - name: Restore dependencies
-        run: dotnet restore ./BackEnd/PetAdopt.sln
+        run: dotnet restore ./BackEnd/PetAdopt.slnx
 
       - name: Build
         run: dotnet build ./BackEnd/PetAdopt.sln --configuration Release --no-restore
