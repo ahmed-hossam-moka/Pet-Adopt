@@ -22,7 +22,7 @@ jobs:
         run: dotnet restore ./BackEnd/PetAdopt.slnx
 
       - name: Build
-        run: dotnet build ./BackEnd/PetAdopt.sln --configuration Release --no-restore
+        run: dotnet build ./BackEnd/PetAdopt.slnx --configuration Release --no-restore
 
       - name: Publish
         run: dotnet publish ./BackEnd/PetAdopt.API/PetAdopt.API.csproj -c Release -o ./publish
