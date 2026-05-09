@@ -2,7 +2,7 @@ using PetAdopt.API.Extensions;
 using PetAdopt.API.Hubs;
 
 var builder = WebApplication.CreateBuilder(args);
-
+//TEST PIPELINE 
 builder.AddAppServices();
 
 var app = builder.Build();
