@@ -1,0 +1,15 @@
+.base {
+  border-radius: var(--radius-lg);
+}
+
+.textWrap {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.line {
+  height: 14px;
+  border-radius: var(--radius-md);
+}
+

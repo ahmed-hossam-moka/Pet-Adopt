@@ -1,0 +1,209 @@
+.page {
+  padding-bottom: var(--sp-10);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--sp-4);
+  margin-bottom: var(--sp-8);
+}
+
+.titleArea {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+}
+
+.badge {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  background: rgba(var(--clr-primary-rgb), 0.15);
+  color: var(--clr-primary);
+  border: 1px solid rgba(var(--clr-primary-rgb), 0.3);
+}
+
+/* Tabs */
+.tabs {
+  display: flex;
+  gap: var(--sp-2);
+  margin-bottom: var(--sp-6);
+  border-bottom: 1px solid var(--bg-border);
+  padding-bottom: 1px;
+}
+
+.tab {
+  background: transparent;
+  border: none;
+  color: var(--txt-secondary);
+  padding: var(--sp-3) var(--sp-4);
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.tab:hover {
+  color: var(--txt-primary);
+}
+
+.tabActive {
+  color: var(--clr-primary);
+  border-bottom-color: var(--clr-primary);
+}
+
+.tabBadge {
+  background: rgba(var(--clr-primary-rgb), 0.2);
+  color: var(--clr-primary);
+  font-size: 0.75rem;
+  padding: 2px 6px;
+  border-radius: var(--radius-full);
+  font-weight: 700;
+}
+
+/* Pet Table */
+.tableWrap {
+  background: var(--bg-card);
+  border: 1px solid var(--bg-border);
+  border-radius: var(--radius-lg);
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.table th,
+.table td {
+  padding: var(--sp-4);
+  border-bottom: 1px solid var(--bg-border);
+}
+
+.table th {
+  color: var(--txt-muted);
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background: rgba(255,255,255,0.02);
+}
+
+.table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.table tbody tr:hover {
+  background: rgba(255,255,255,0.02);
+}
+
+.petCell {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  font-weight: 600;
+  color: var(--txt-primary);
+}
+
+.petImg {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-md);
+  object-fit: cover;
+}
+
+.statusBadge {
+  font-size: 0.75rem;
+  padding: 3px 8px;
+  border-radius: var(--radius-full);
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.statusPending {
+  background: rgba(234,179,8,0.15);
+  color: #eab308;
+}
+
+.statusApproved {
+  background: rgba(34,197,94,0.15);
+  color: #22c55e;
+}
+
+.statusAdopted {
+  background: rgba(168,85,247,0.15);
+  color: #a855f7;
+}
+
+.actionCell {
+  display: flex;
+  gap: var(--sp-2);
+}
+
+.iconBtn {
+  background: transparent;
+  border: none;
+  color: var(--txt-muted);
+  cursor: pointer;
+  padding: 6px;
+  border-radius: var(--radius-md);
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.iconBtn:hover {
+  background: var(--bg-hover);
+  color: var(--txt-primary);
+}
+
+.deleteBtn:hover {
+  background: rgba(239,68,68,0.15);
+  color: #ef4444;
+}
+
+/* Empty States */
+.empty {
+  text-align: center;
+  padding: var(--sp-12) var(--sp-4);
+  background: var(--bg-card);
+  border: 1px dashed var(--bg-border);
+  border-radius: var(--radius-lg);
+}
+
+.emptyIcon {
+  font-size: 2.5rem;
+  color: var(--txt-muted);
+  margin-bottom: var(--sp-4);
+}
+
+.empty h3 {
+  font-size: 1.2rem;
+  color: var(--txt-primary);
+  margin-bottom: var(--sp-2);
+}
+
+.empty p {
+  color: var(--txt-secondary);
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+/* Requests Grid */
+.requestsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: var(--sp-4);
+}

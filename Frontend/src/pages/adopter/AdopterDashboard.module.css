@@ -1,0 +1,227 @@
+/* ============================================
+   ADOPTER DASHBOARD STYLES
+   ============================================ */
+
+   .page {
+    padding-top: calc(var(--navbar-height) + var(--sp-8));
+    padding-bottom: var(--sp-12);
+  }
+  
+  .header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--sp-4);
+    margin-bottom: var(--sp-6);
+  }
+  
+  .titleArea {
+    display: flex;
+    align-items: center;
+    gap: var(--sp-3);
+  }
+  
+  .badge {
+    background: rgba(249, 115, 22, 0.1);
+    color: var(--clr-primary);
+    padding: 4px 10px;
+    border-radius: var(--radius-full);
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  
+  /* --- Tabs --- */
+  .tabs {
+    display: flex;
+    gap: var(--sp-2);
+    border-bottom: 1px solid var(--bg-border);
+    margin-bottom: var(--sp-6);
+    overflow-x: auto;
+    padding-bottom: 1px; /* prevent border clip */
+  }
+  
+  .tab {
+    display: flex;
+    align-items: center;
+    gap: var(--sp-2);
+    padding: var(--sp-3) var(--sp-5);
+    background: none;
+    border: none;
+    border-bottom: 2px solid transparent;
+    color: var(--txt-secondary);
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    white-space: nowrap;
+  }
+  
+  .tab:hover {
+    color: var(--txt-primary);
+    background: var(--bg-hover);
+    border-radius: var(--radius-md) var(--radius-md) 0 0;
+  }
+  
+  .tabActive {
+    color: var(--clr-primary);
+    border-bottom-color: var(--clr-primary);
+  }
+  
+  .tabActive:hover {
+    background: none;
+  }
+  
+  /* --- Content --- */
+  .tabContent {
+    animation: fadeIn 0.3s ease-out;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(5px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  /* Empty States */
+  .empty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: var(--sp-12) var(--sp-4);
+    background: var(--bg-card);
+    border: 1px dashed var(--bg-border);
+    border-radius: var(--radius-lg);
+    color: var(--txt-muted);
+  }
+  
+  .emptyIcon {
+    font-size: 3rem;
+    margin-bottom: var(--sp-4);
+    opacity: 0.5;
+  }
+  
+  .empty h3 {
+    font-size: 1.25rem;
+    color: var(--txt-primary);
+    margin-bottom: var(--sp-2);
+  }
+  
+  .empty p {
+    font-size: 0.95rem;
+    max-width: 400px;
+    margin-bottom: var(--sp-4);
+  }
+  
+  /* Tables */
+  .tableWrap {
+    width: 100%;
+    overflow-x: auto;
+    background: var(--bg-card);
+    border: 1px solid var(--bg-border);
+    border-radius: var(--radius-lg);
+  }
+  
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    min-width: 600px;
+  }
+  
+  .table th, .table td {
+    padding: var(--sp-4) var(--sp-5);
+    border-bottom: 1px solid var(--bg-border);
+  }
+  
+  .table th {
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--txt-secondary);
+    background: rgba(0, 0, 0, 0.2);
+    letter-spacing: 0.05em;
+  }
+  
+  .table tr:last-child td {
+    border-bottom: none;
+  }
+  
+  .table tbody tr {
+    transition: background var(--transition-fast);
+  }
+  
+  .table tbody tr:hover {
+    background: var(--bg-hover);
+  }
+  
+  /* Status Badges */
+  .statusBadge {
+    display: inline-flex;
+    padding: 4px 10px;
+    border-radius: var(--radius-full);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+  
+  .statusPending {
+    background: rgba(234, 179, 8, 0.15);
+    color: #eab308;
+  }
+  
+  .statusAccepted {
+    background: rgba(34, 197, 94, 0.15);
+    color: #22c55e;
+  }
+  
+  .statusRejected {
+    background: rgba(239, 68, 68, 0.15);
+    color: #ef4444;
+  }
+  
+  /* Actions */
+  .actionCell {
+    display: flex;
+    gap: var(--sp-2);
+    align-items: center;
+  }
+  
+  .iconBtn {
+    width: 32px;
+    height: 32px;
+    border-radius: var(--radius-md);
+    background: none;
+    border: none;
+    color: var(--txt-secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+  }
+  
+  .iconBtn:hover {
+    background: var(--bg-border);
+    color: var(--txt-primary);
+  }
+  
+  .deleteBtn:hover {
+    background: rgba(239, 68, 68, 0.1);
+    color: var(--clr-danger);
+  }
+  
+  /* Layout utilities */
+  .flexCol {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  
+  .subText {
+    font-size: 0.8rem;
+    color: var(--txt-muted);
+  }

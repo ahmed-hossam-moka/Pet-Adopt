@@ -1,0 +1,30 @@
+.wrap {
+  text-align: center;
+  padding: var(--sp-12) var(--sp-4);
+  background: var(--bg-card);
+  border: 1px dashed var(--bg-border);
+  border-radius: var(--radius-lg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sp-3);
+}
+
+.icon {
+  font-size: 2.8rem;
+  color: var(--txt-muted);
+  opacity: 0.75;
+}
+
+.title {
+  font-size: 1.2rem;
+  color: var(--txt-primary);
+  margin: 0;
+}
+
+.desc {
+  color: var(--txt-secondary);
+  max-width: 460px;
+  margin: 0;
+}
+

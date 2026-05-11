@@ -1,0 +1,122 @@
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--bg-border);
+  border-radius: var(--radius-lg);
+  padding: var(--sp-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+  transition: border-color var(--transition-fast);
+}
+
+.card:hover {
+  border-color: var(--clr-primary);
+}
+
+/* Pet row */
+.petRow {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+}
+
+.petImg {
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius-md);
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.petInfo {
+  flex: 1;
+}
+
+.petName {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--txt-primary);
+}
+
+.date {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.75rem;
+  color: var(--txt-muted);
+  margin-top: 2px;
+}
+
+/* Status badge */
+.badge {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  padding: 3px 10px;
+  border-radius: var(--radius-full);
+  text-transform: uppercase;
+  flex-shrink: 0;
+}
+
+.pending  { background: rgba(234,179,8,0.15);  color: #eab308; border: 1px solid rgba(234,179,8,0.3); }
+.accepted { background: rgba(34,197,94,0.15);  color: #22c55e; border: 1px solid rgba(34,197,94,0.3); }
+.rejected { background: rgba(239,68,68,0.15);  color: #ef4444; border: 1px solid rgba(239,68,68,0.3); }
+
+/* Adopter info */
+.adopterInfo {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-3);
+}
+
+.infoItem {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.8rem;
+  color: var(--txt-secondary);
+}
+
+/* Message quote */
+.message {
+  font-size: 0.82rem;
+  color: var(--txt-muted);
+  font-style: italic;
+  border-left: 2px solid var(--clr-primary);
+  padding-left: var(--sp-3);
+  line-height: 1.5;
+}
+
+/* Action buttons */
+.actions {
+  display: flex;
+  gap: var(--sp-2);
+}
+
+.acceptBtn {
+  background: rgba(34,197,94,0.12);
+  color: #22c55e;
+  border: 1px solid rgba(34,197,94,0.3);
+  flex: 1;
+  justify-content: center;
+}
+
+.acceptBtn:hover {
+  background: #22c55e;
+  color: #fff;
+  border-color: #22c55e;
+}
+
+.rejectBtn {
+  background: rgba(239,68,68,0.12);
+  color: #ef4444;
+  border: 1px solid rgba(239,68,68,0.3);
+  flex: 1;
+  justify-content: center;
+}
+
+.rejectBtn:hover {
+  background: #ef4444;
+  color: #fff;
+  border-color: #ef4444;
+}

@@ -1,0 +1,173 @@
+.backBtn {
+  margin-bottom: var(--sp-5);
+}
+
+.headerCard {
+  background: var(--bg-card);
+  border: 1px solid var(--bg-border);
+  border-radius: var(--radius-xl);
+  padding: var(--sp-6);
+  margin-bottom: var(--sp-6);
+}
+
+.headerTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-3);
+}
+
+.title {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  font-weight: 900;
+  color: var(--txt-primary);
+  line-height: 1.1;
+}
+
+.titleSkeleton {
+  height: 40px;
+  width: min(420px, 75%);
+}
+
+.metaSk {
+  height: 16px;
+  width: 120px;
+  border-radius: var(--radius-full);
+}
+
+.starsSk {
+  height: 18px;
+  width: 140px;
+  border-radius: var(--radius-full);
+}
+
+.petLineSk {
+  height: 14px;
+  width: 180px;
+  border-radius: var(--radius-full);
+}
+
+.inactiveBadge {
+  font-size: 0.8rem;
+}
+
+.metaRow {
+  display: flex;
+  gap: var(--sp-4);
+  flex-wrap: wrap;
+  margin-top: var(--sp-3);
+  color: var(--txt-muted);
+  font-size: 0.9rem;
+}
+
+.metaItem strong {
+  color: var(--txt-primary);
+}
+
+.starIcon {
+  color: #eab308;
+  margin-right: 6px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-4);
+}
+
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--bg-border);
+  border-radius: var(--radius-xl);
+  padding: var(--sp-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+}
+
+.cardTop {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.stars {
+  display: flex;
+  gap: 2px;
+  color: var(--bg-border);
+  font-size: 1.05rem;
+}
+
+.star {
+  opacity: 0.6;
+}
+
+.starActive {
+  color: #eab308;
+  opacity: 1;
+}
+
+.cardMeta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--txt-muted);
+  font-size: 0.82rem;
+}
+
+.author {
+  color: var(--txt-secondary);
+  font-weight: 800;
+}
+
+.dot {
+  opacity: 0.6;
+}
+
+.date {
+  opacity: 0.9;
+}
+
+.comment {
+  margin: 0;
+  color: var(--txt-primary);
+  line-height: 1.7;
+  font-size: 0.92rem;
+}
+
+.petLine {
+  font-size: 0.8rem;
+  color: var(--txt-muted);
+  padding-top: 8px;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-3);
+  margin-top: var(--sp-6);
+}
+
+.pageLabel {
+  color: var(--txt-muted);
+  font-size: 0.9rem;
+}
+
+.pageLabel strong {
+  color: var(--txt-primary);
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .title {
+    font-size: 1.6rem;
+  }
+}
+

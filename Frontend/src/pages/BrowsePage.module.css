@@ -1,0 +1,153 @@
+/* ═══════════════════════════════════════
+   BROWSE PAGE STYLES
+   ═══════════════════════════════════════ */
+
+/* ── Header row ── */
+.header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--sp-4);
+  margin-bottom: var(--sp-5);
+  flex-wrap: wrap;
+}
+
+.count {
+  font-size: 0.85rem;
+  color: var(--txt-muted);
+  margin-top: var(--sp-1);
+}
+
+/* ── Filter bar container ── */
+.filterBar {
+  background: var(--bg-card);
+  border: 1px solid var(--bg-border);
+  border-radius: var(--radius-lg);
+  padding: var(--sp-4) var(--sp-5);
+  margin-bottom: var(--sp-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+}
+
+/* ── Type pills ── */
+.typePills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+}
+
+.pill {
+  padding: 6px 16px;
+  border-radius: var(--radius-full);
+  border: 1.5px solid var(--bg-border);
+  background: transparent;
+  color: var(--txt-secondary);
+  font-size: 0.82rem;
+  font-family: var(--font-body);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  white-space: nowrap;
+}
+
+.pill:hover {
+  border-color: var(--clr-primary);
+  color: var(--clr-primary);
+}
+
+.pillActive {
+  background: var(--clr-primary);
+  border-color: var(--clr-primary);
+  color: #fff;
+  box-shadow: 0 2px 12px rgba(249,115,22,0.35);
+}
+
+/* ── Text filters row ── */
+.filterRow {
+  display: flex;
+  gap: var(--sp-3);
+  flex-wrap: wrap;
+}
+
+/* Each filter input wrapper */
+.filterInput {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex: 1;
+  min-width: 160px;
+}
+
+/* Icon inside input */
+.filterIcon {
+  position: absolute;
+  left: 12px;
+  color: var(--txt-muted);
+  font-size: 0.8rem;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.filterIconText {
+  position: absolute;
+  left: 10px;
+  font-size: 0.85rem;
+  pointer-events: none;
+  z-index: 1;
+  line-height: 1;
+}
+
+/* ── Error box ── */
+.errorBox {
+  background: rgba(239,68,68,0.08);
+  border: 1px solid rgba(239,68,68,0.2);
+  border-radius: var(--radius-lg);
+  padding: var(--sp-5);
+  text-align: center;
+  color: var(--clr-danger);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sp-3);
+  margin-bottom: var(--sp-5);
+}
+
+/* ── Pagination ── */
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-4);
+  margin-top: var(--sp-8);
+  padding-top: var(--sp-6);
+  border-top: 1px solid var(--bg-border);
+}
+
+.pageInfo {
+  font-size: 0.875rem;
+  color: var(--txt-secondary);
+  font-weight: 600;
+  min-width: 120px;
+  text-align: center;
+}
+
+/* ── Responsive ── */
+@media (max-width: 640px) {
+  .filterRow {
+    flex-direction: column;
+  }
+  .filterInput {
+    min-width: 100%;
+  }
+  .typePills {
+    gap: var(--sp-1);
+  }
+  .pill {
+    font-size: 0.75rem;
+    padding: 5px 12px;
+  }
+  .pagination {
+    gap: var(--sp-2);
+  }
+}

@@ -1,0 +1,45 @@
+.pills {
+  display: flex;
+  gap: var(--sp-2);
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 18px;
+  border-radius: var(--radius-full);
+  background: var(--bg-card);
+  border: 1.5px solid var(--bg-border);
+  color: var(--txt-secondary);
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  font-family: var(--font-body);
+}
+
+.pill:hover {
+  border-color: var(--clr-primary);
+  color: var(--clr-primary);
+  background: rgba(249,115,22,0.05);
+  transform: translateY(-1px);
+}
+
+/* Active state — selected pill */
+.pill.active {
+  background: var(--clr-primary);
+  border-color: var(--clr-primary);
+  color: #fff;
+  box-shadow: 0 4px 14px rgba(249,115,22,0.3);
+  transform: translateY(-1px);
+}
+
+.pill__emoji {
+  font-size: 1rem;
+  line-height: 1;
+}
