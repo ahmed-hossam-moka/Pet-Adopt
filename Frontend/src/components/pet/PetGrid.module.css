@@ -1,0 +1,84 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: var(--sp-5);
+}
+
+/* ── Skeleton Card ── */
+.skeletonCard {
+  background: var(--bg-card);
+  border: 1px solid var(--bg-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.skelImg {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border-radius: 0;
+}
+
+.skelBody {
+  padding: var(--sp-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+}
+
+.skelBadge {
+  width: 60px;
+  height: 20px;
+  border-radius: var(--radius-full);
+}
+
+.skelTitle {
+  width: 70%;
+  height: 22px;
+  border-radius: var(--radius-sm);
+}
+
+.skelText {
+  width: 90%;
+  height: 14px;
+  border-radius: var(--radius-sm);
+}
+
+.skelTextShort {
+  width: 55%;
+}
+
+.skelBtn {
+  width: 100%;
+  height: 36px;
+  border-radius: var(--radius-md);
+  margin-top: var(--sp-2);
+}
+
+/* ── Empty State ── */
+.empty {
+  grid-column: 1 / -1;  /* span full width if inside a grid */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--sp-10) var(--sp-4);
+  text-align: center;
+  gap: var(--sp-3);
+}
+
+.empty__icon {
+  font-size: 3.5rem;
+  opacity: 0.4;
+}
+
+.empty__title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--txt-secondary);
+}
+
+.empty__text {
+  font-size: 0.875rem;
+  color: var(--txt-muted);
+  max-width: 320px;
+}

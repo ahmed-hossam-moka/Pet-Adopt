@@ -1,0 +1,161 @@
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--bg-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: all var(--transition-normal);
+  display: flex;
+  flex-direction: column;
+}
+
+.card:hover {
+  border-color: rgba(249,115,22,0.3);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-4px);
+}
+
+/* --- Image wrapper --- */
+.card__img_wrapper {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  display: block;
+  background: var(--bg-hover);
+}
+
+.card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.card:hover .card__img {
+  transform: scale(1.05);  /* subtle zoom on hover */
+}
+
+/* Status badge (top-left overlay) */
+.card__status {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 2;
+  backdrop-filter: blur(4px);
+}
+
+/* Heart button (top-right overlay) */
+.card__heart {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 2;
+  width: 34px;
+  height: 34px;
+  border-radius: var(--radius-full);
+  background: rgba(15,15,19,0.6);
+  backdrop-filter: blur(6px);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  opacity: 0;           /* hidden by default */
+  transform: scale(0.8);
+}
+
+/* Show heart on card hover */
+.card:hover .card__heart {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.card__heart:hover {
+  background: var(--clr-danger);
+  transform: scale(1.15) !important;
+}
+
+.card__heart.saved {
+  opacity: 1;
+  background: var(--clr-danger);
+  color: #fff;
+}
+
+/* --- Card Body --- */
+.card__body {
+  padding: var(--sp-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+  flex: 1;
+}
+
+.card__meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card__type {
+  text-transform: capitalize;
+}
+
+.card__gender {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.male   { color: #60a5fa; }  /* blue */
+.female { color: #f472b6; }  /* pink */
+
+/* Pet name — big and clickable */
+.card__name {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--txt-primary);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.card__name:hover {
+  color: var(--clr-primary);
+}
+
+.card__breed {
+  font-size: 0.82rem;
+  color: var(--txt-secondary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.card__owner {
+  font-size: 0.72rem;
+  color: var(--txt-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.card__location {
+  font-size: 0.8rem;
+  color: var(--txt-muted);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.card__cta {
+  margin-top: auto;
+  width: 100%;
+  justify-content: center;
+}

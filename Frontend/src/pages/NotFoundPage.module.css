@@ -1,0 +1,41 @@
+.wrap {
+  text-align: center;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  padding: var(--sp-8) var(--sp-5);
+  background: var(--bg-card);
+  border: 1px solid var(--bg-border);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-md);
+}
+
+.icon {
+  font-size: 3.6rem;
+  color: var(--clr-primary);
+  opacity: 0.55;
+}
+
+.code {
+  font-size: 4.2rem;
+  font-family: var(--font-heading);
+  color: var(--clr-primary);
+  line-height: 1;
+}
+
+.title {
+  font-size: 1.4rem;
+  color: var(--txt-primary);
+  margin: 0;
+}
+
+.desc {
+  color: var(--txt-secondary);
+  max-width: 420px;
+  margin: 0;
+}
+
