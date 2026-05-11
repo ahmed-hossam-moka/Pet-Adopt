@@ -1,0 +1,50 @@
+# =========================
+# BUILD STAGE
+# =========================
+
+# Use the official .NET SDK image
+# This image contains:
+# - dotnet CLI
+# - compiler
+# - restore/build/publish tools
+FROM mcr.microsoft.com/dotnet/sdk:10.0 AS build
+
+# Set the working directory inside the container
+WORKDIR /src
+
+# Copy everything from your BackEnd folder into the container
+COPY . .
+
+# Restore NuGet packages for the solution
+RUN dotnet restore PetAdopt.slnx
+
+# Publish the API project in Release mode
+# Output goes to /app/publish
+RUN dotnet publish ./PetAdopt.API/PetAdopt.API.csproj \
+    -c Release \
+    -o /app/publish \
+    --no-restore
+
+
+# =========================
+# RUNTIME STAGE
+# =========================
+
+# Smaller runtime-only image
+# Does NOT include SDK tools
+FROM mcr.microsoft.com/dotnet/aspnet:10.0 AS runtime
+
+# Set working directory
+WORKDIR /app
+
+# Tell ASP.NET Core to listen on port 8080
+ENV ASPNETCORE_URLS=http://+:8080
+
+# Expose port 8080
+EXPOSE 8080
+
+# Copy published files from build stage
+COPY --from=build /app/publish .
+
+# Start the application
+ENTRYPOINT ["dotnet", "PetAdopt.API.dll"]

@@ -25,7 +25,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "http://localhost:5052/api",  // Your backend base URL
+  baseURL: import.meta.env.VITE_API_BASE_URL || "/api", // Uses env var for production, defaults to /api
   headers: {
     "Content-Type": "application/json",
   },
@@ -50,7 +50,7 @@ api.interceptors.request.use(
     }
     return config;
   },
-  (error) => Promise.reject(error)
+  (error) => Promise.reject(error),
 );
 
 /*
@@ -71,7 +71,7 @@ api.interceptors.response.use(
       window.location.href = "/login";
     }
     return Promise.reject(error);
-  }
+  },
 );
 
 export default api;

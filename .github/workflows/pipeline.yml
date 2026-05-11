@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - main
+  pull_request:
+    branches:
+      - main
 
 jobs:
   build:
@@ -13,22 +16,24 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Setup .NET
-        uses: actions/setup-dotnet@v4
-        with:
-          dotnet-version: '10.0.x'
+      - name: Create .env file
+        run: |
+          echo "ASPNETCORE_ENVIRONMENT=${{ secrets.ASPNETCORE_ENVIRONMENT }}" >> .env
+          echo "ASPNETCORE_URLS=${{ secrets.ASPNETCORE_URLS }}" >> .env
+          echo "ConnectionStrings__DefaultConnection=${{ secrets.CONNECTIONSTRINGS__DEFAULTCONNECTION }}" >> .env
+          echo "JWT__Key=${{ secrets.JWT__KEY }}" >> .env
+          echo "JWT__Issuer=${{ secrets.JWT__ISSUER }}" >> .env
+          echo "JWT__Audience=${{ secrets.JWT__AUDIENCE }}" >> .env
+          echo "AdminSettings__Email=${{ secrets.ADMINSETTINGS__EMAIL }}" >> .env
+          echo "AdminSettings__Password=${{ secrets.ADMINSETTINGS__PASSWORD }}" >> .env
 
-      - name: Restore dependencies
-        run: dotnet restore ./BackEnd/PetAdopt.slnx
+      - name: Build Docker images
+        run: docker compose build
 
-      - name: Build
-        run: dotnet build ./BackEnd/PetAdopt.slnx --configuration Release --no-restore
+      - name: Start containers
+        run: docker compose up -d
 
-      - name: Publish
-        run: dotnet publish ./BackEnd/PetAdopt.API/PetAdopt.API.csproj -c Release -o ./publish
-
-      - name: Upload artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: petadopt-api
-          path: ./publish
+      - name: Verify containers are running
+        run: |
+          docker compose ps
+          docker compose logs --tail=20

@@ -1,0 +1,49 @@
+version: "3.9"
+
+# ─────────────────────────────────────────────────────────────
+#  PetAdopt – Docker Compose
+#
+#  Services:    frontend (nginx on 80 → exposed as 5173)
+#               backend  (ASP.NET on 8080 → exposed as 5052)
+#  Database:    hosted externally at db48185.public.databaseasp.net
+#
+#  How requests flow:
+#    Browser → localhost:5173 → nginx
+#                ├── /        → React SPA (static files)
+#                └── /api/**  → http://backend:8080  (reverse proxy)
+# ─────────────────────────────────────────────────────────────
+
+services:
+
+  # ──────────────────── BACKEND ────────────────────
+  backend:
+    build:
+      context: ./Backend
+      dockerfile: Dockerfile
+    container_name: petadopt_backend
+    restart: unless-stopped
+    ports:
+      - "5052:8080"
+    env_file:
+      - .env              # all environment variables live here
+    networks:
+      - petadopt_net
+
+  # ──────────────────── FRONTEND ───────────────────
+  frontend:
+    build:
+      context: ./Frontend
+      dockerfile: Dockerfile
+    container_name: petadopt_frontend
+    restart: unless-stopped
+    ports:
+      - "5173:80"
+    depends_on:
+      - backend
+    networks:
+      - petadopt_net
+
+# ─────────────────────── NETWORKS ────────────────────────
+networks:
+  petadopt_net:
+    driver: bridge
