@@ -18,7 +18,7 @@ services:
   # ──────────────────── BACKEND ────────────────────
   backend:
     build:
-      context: ./Backend
+      context: ./BackEnd
       dockerfile: Dockerfile
     container_name: petadopt_backend
     restart: unless-stopped
