@@ -9,7 +9,7 @@
   In Phase 2, we'll wrap this with <AuthContextProvider>
   so every component can access the logged-in user.
 */
-
+/*Test Merge*/ 
 import AppRouter from "./router";
 import ErrorBoundary from "./components/ui/ErrorBoundary";
 
